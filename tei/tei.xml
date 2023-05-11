@@ -101,22 +101,43 @@
     </teiHeader>
     <!--                    Facismile Description                 -->
     <facsimile>
-        <surface xml:id="pg40_41">
+        <surface xml:id="pg40_41"> <!-- This is encodes the image showing both 40 and 41 sides -->
             <figure>
                 <label>Page 40 and 41 </label>
                 <figDesc> An image of pages 40 and 41 from A.B Wiskadals Fabrik Catalog. It includes
                     information regarding the various styles of jumpers available during the catalog
                     issue of Fall/winter 1951 and 1952</figDesc>
                 <graphic xml:id="pg40_41_full" url="asset/img/pg_40_41.jpg"/>
-                <graphic xml:id="pg_40" url="asset/img/pg_40.jpg"/>
-
-                <graphic xml:id="pg_41" url="asset/img/pg_41.jpg"/>
+                
+            </figure>
+        </surface>
+        <surface xml:id="pg_40"> <!-- This encodes only the image showing the page number 40 -->
+            <figure>
+                <label>Page 40</label>
+                <figDesc> An image of pages 40 from A.B Wiskadals Fabrik Catalog. It includes
+                    information regarding the various styles of jumpers available during the catalog
+                    issue of Fall/winter 1951 and 1952</figDesc>
+                
+                <graphic xml:id="pg_40_full" url="asset/img/pg_40.jpg"/>
+                
+            
+            </figure>
+        </surface>
+        <surface xml:id="pg_41"> <!-- This encodes only the image showing the page number 41 -->
+            <figure>
+                <label>Page 41 </label>
+                <figDesc> An image of pages 41 from A.B Wiskadals Fabrik Catalog. It includes
+                    information regarding the various styles of jumpers available during the catalog
+                    issue of Fall/winter 1951 and 1952</figDesc>
+                <graphic xml:id="pg_41_full" url="asset/img/pg_41.jpg"/>
             </figure>
         </surface>
     </facsimile>
     <text xml:lang="swe">
         <body>
             <pb n="40"/>
+            <!-- specify a div for each page and refer each page to the image using facs attribute, id pg_40 is id of the surface containing the image -->
+            <div type="page" facs="#pg_40"> 
             <div>
                 <head rend="case(allcaps)"> ELEGANTA JUMPERNYHETER </head>
             </div>
@@ -243,8 +264,9 @@
             <fw type="footer"><orgName>A.-B. WISKADALS
                 FABRIK</orgName>,<placeName>BORÅS</placeName></fw>
 
-
+            </div>
             <pb n="41"/>
+            <div type="page" facs="#pg_41">
             <div type="column" n="1">
                 <div>
                     <list>
@@ -402,6 +424,7 @@
             <fw type="footer"><orgName>A.-B. WISKADALS
                 FABRIK</orgName>,<placeName>BORÅS</placeName></fw>
             <fw type="pagenumber">41</fw>
+            </div>
         </body>
     </text>
 </TEI>

@@ -19,9 +19,9 @@
                     crossorigin="anonymous"/>
                 <!-- load the stylesheets in the assets/css folder, where you can modify the styling of your website-->
                 <link rel="stylesheet" href="asset/css/main.css"/>
-               <!-- <link rel="stylesheet" href="assets/css/desktop.css"/>-->
+                <link rel="stylesheet" href="asset/css/desktop.css"/>
             </head>
-
+            
             <body>
                 <header>
                     <h1>
@@ -29,6 +29,12 @@
                             select="//tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title"/>
                     </h1>
                 </header>
+                <nav id="sitenav">
+                    <a href="index.html">Home</a> |
+                    <a href="toplayer.html">Top Layer</a> |
+                    <a href="design.html">Design At A Glance</a> |
+                    <a href="download.html">Downloads</a>
+                </nav>
                 <main id="manuscript">
                     <!-- bootstrap "container" class makes the columns look pretty -->
                     <div class="container">
@@ -60,7 +66,7 @@
                                 <article id="transcription">
                                     <p>
                                         <strong>Description:</strong>
-                                        <xsl:apply-templates select="//tei:TEI//tei:figDesc"/>
+                                        <xsl:apply-templates select="//tei:TEI//tei:surface[@xml:id = 'pg40_41']//tei:figDesc"/>
                                     </p>
                                 </article>
                             </div>
@@ -71,7 +77,7 @@
                                     <p>
                                         <strong>Author:</strong>
                                         <br/>
-                                        <xsl:apply-templates select="//tei:TEI//tei:author"/>
+                                        <xsl:apply-templates select="//tei:TEI//tei:titleStmt//tei:author"/>
                                     </p>
                                     <p>
                                         <strong>Transcription by:</strong><br/>
@@ -82,6 +88,20 @@
                         </div>
                     </div>
                 </main>
+                <footer>
+                    <div class="row" id="footer">
+                        <div class="col-sm copyright">
+                            <div>
+                                <a href="https://creativecommons.org/licenses/by/4.0/legalcode">
+                                    <img src="assets/img/cc.svg" class="copyright_logo" alt="Creative Commons License"/><img src="assets/img/by.svg" class="copyright_logo" alt="Attribution 4.0 International"/>
+                                </a>
+                            </div>
+                            <div>
+                                2023 Rachel Bayston &amp; Sanam Ali.
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </body>
         </html>
     </xsl:template>

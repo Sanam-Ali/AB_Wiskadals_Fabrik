@@ -142,13 +142,14 @@
                 <head rend="case(allcaps)"> ELEGANTA JUMPERNYHETER </head>
             </div>
             <div type="column" n="1">
+                <div type="list">
                 <!-- Lists have been used to encode each article of clothing as an item -->
                 <list>
                     <item>
                         <p>
                             <idno>Y 1421</idno>
                             <!-- each article of clothing has a unique identifier -->
-                            <desc> Damjumper, resårstickad av prima fintrådigt helyllegarn . Modell
+                            <desc> Damjumper, resårstickad av prima fintrådigt <fcat:fabric>helyllegarn</fcat:fabric> . Modell
                                 med <fcat:design type="sleeve"> trekvartslång ärm </fcat:design>, <!-- design,color,size and fabric are customized elements -->
                                 <fcat:design type="buttons">knäppning i ryggen</fcat:design>,
                                     <fcat:design type="nekline">rysch med
@@ -162,13 +163,13 @@
                     </item>
                     <item>
                         <p>
-                            <idno>Y 1423</idno> Damjumper i slätstickning och tillverkad av ett
+                            <idno>Y 1423</idno><desc> Damjumper i slätstickning och tillverkad av ett
                             prima fintrå-digt <fcat:fabric>helyllegarn</fcat:fabric> i elastisk
                             patentstickning. Modell med <fcat:design type="sleeve">trekvartslång
                                 ärm</fcat:design>, <fcat:design type="neckline">liten krage samt
                                 knytarrangemang</fcat:design> vid halsen. En stilig nyhet som kommer
                             att vinna Edert fulla gillande. Storlek <fcat:size>42</fcat:size>.
-                            Finnes i <fcat:color>lackrött eller gammalrosa</fcat:color> färg. <desc
+                                Finnes i <fcat:color>lackrött eller gammalrosa</fcat:color> färg.</desc> <desc
                                 type="price"> Pris pr styck <num>22.95</num></desc></p>
                     </item>
                     <item>
@@ -199,8 +200,11 @@
                             <desc type="price">Pris pr styck endast <num>18.90</num></desc></p>
                     </item>
                 </list>
+                    </div> <!-- end of list div -->
             </div>
+                
             <div type="column" n="2">
+                <div type="list">
                 <list>
                     <item>
                         <p><idno>Y 1429 </idno>
@@ -259,7 +263,8 @@
                         </p>
                     </item>
                 </list>
-            </div>
+                    </div> <!--end of list div-->
+            </div><!-- end of column div -->
             <fw type="pagenumber">40</fw>
             <fw type="footer"><orgName>A.-B. WISKADALS
                 FABRIK</orgName>,<placeName>BORÅS</placeName></fw>
@@ -268,7 +273,7 @@
             <pb n="41"/>
             <div type="page" facs="#pg_41">
             <div type="column" n="1">
-                <div>
+                <div type="list">
                     <list>
                         <item>
                             <p>
@@ -291,7 +296,7 @@
                     <head>OBS. PRISET 13.45</head>
                 </div>
 
-                <div>
+                <div type="list">
                     <list>
                         <item>
                             <p>
@@ -313,7 +318,7 @@
                 <div>
                     <head>Kraftigt ruggad. ANGORA IMIT.</head>
                 </div>
-                <div>
+                <div type="list">
                     <list>
 
                         <item>
@@ -352,7 +357,7 @@
                 <div>
                     <head>SPETSBLUS OBS. Endast 10.00</head>
                 </div>
-                <div>
+                <div type="list">
                     <list>
                         <item>
                             <p>
@@ -365,18 +370,18 @@
                                         med uppvikt mudd</fcat:design> samt resårstickad
                                     midjelinning. En myc-ket populär nyhet till fabulöst billigt
                                     pris. Storlek <fcat:size>40 och 42</fcat:size>.</desc>
-                                <desc>Pris pr styck endast <num>10.00</num></desc>
+                                <desc type="price">Pris pr styck endast <num>10.00</num></desc>
                             </p>
                         </item>
                         <item>
                             <p>
-                                <idno>Y 1449</idno> Damjumper med <fcat:design type="sleeve">lång
+                                <idno>Y 1449</idno> <desc> Damjumper med <fcat:design type="sleeve">lång
                                     ärm</fcat:design>. Hela jumpern mönsterstickad i nätmönster och
                                 tillverkad av extra prima <fcat:fabric>helylle
                                 kamgarn</fcat:fabric>. En mycket elegant och välsittande jumper till
                                 billigt pris. Storlek <fcat:size>42</fcat:size>. Lev. i
                                     <fcat:color>stålgrått, gammalrosa eller
-                                    diamantsvart</fcat:color>. Köp genast. Ni blir belåten. <desc
+                                        diamantsvart</fcat:color>. Köp genast. Ni blir belåten.</desc> <desc
                                     type="price">Pris pr styck endast <num>25.40</num>
                                 </desc>
                             </p>
@@ -402,7 +407,7 @@
                 <div>
                     <head>DAMJACKA MED "PLYSCHKRAGE"</head>
                 </div>
-                <div>
+                <div type="list">
                     <list>
                         <item>
                             <p>
@@ -419,12 +424,12 @@
                             </p>
                         </item>
                     </list>
-                </div>
-            </div>
+                </div> <!-- end of list div -->
+            </div> <!-- end of column div -->
             <fw type="footer"><orgName>A.-B. WISKADALS
                 FABRIK</orgName>,<placeName>BORÅS</placeName></fw>
             <fw type="pagenumber">41</fw>
-            </div>
+            </div> <!--end of page div-->
         </body>
     </text>
 </TEI>

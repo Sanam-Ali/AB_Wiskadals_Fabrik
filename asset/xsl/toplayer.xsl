@@ -129,6 +129,7 @@
     </xsl:template>
     
     <!-- transform tei paragraphs into html paragraphs -->
+   
     <xsl:template match="tei:p">
         <p>
             <!-- apply matching templates for anything that was nested in tei:p -->

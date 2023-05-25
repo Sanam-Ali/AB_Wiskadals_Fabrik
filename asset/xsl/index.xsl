@@ -113,7 +113,7 @@
                         <div class="col-sm copyright">
                             <div>
                                 <a href="https://creativecommons.org/licenses/by/4.0/legalcode">
-                                    <img src="assets/img/cc.svg" class="copyright_logo" alt="Creative Commons License"/><img src="assets/img/by.svg" class="copyright_logo" alt="Attribution 4.0 International"/>
+                                    <img src="asset/img/cc.svg" class="copyright_logo" alt="Creative Commons License"/><img src="asset/img/by.svg" class="copyright_logo" alt="Attribution 4.0 International"/>
                                 </a>
                             </div>
                             <div>

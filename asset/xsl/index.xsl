@@ -36,7 +36,8 @@
                     <a href="index.html">Home</a> |
                     <a href="toplayer.html">Top Layer</a> |
                     <a href="design.html">Design At A Glance</a> |
-                    <a href="download.html">Downloads</a>
+                    <a href="files.html">Files</a>
+                    <!--Now reads 'Files,' not 'Downloads.'-->
                 </nav>
                 <main id="manuscript">
                     <!-- bootstrap "container" class makes the columns look pretty -->
@@ -72,7 +73,7 @@
                                         <!--This Description is now supplied by the summary at line 102 of the TEI header under msDesc-->
                                         <p>
                                             <strong>Description:</strong>
-                                            <xsl:apply-templates select="//tei:TEI//tei:msDesc//tei:summary"/>
+                                            <xsl:apply-templates select="//tei:TEI//tei:encodingDesc//tei:projectDesc"/>
                                             <!--original code tei:surface[@xml:id = 'pg40_41']//tei:figDesc"/>-->
                                         </p>
                                     </article>

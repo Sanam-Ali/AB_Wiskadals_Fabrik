@@ -109,11 +109,11 @@
         </fileDesc>
         <encodingDesc>
             <projectDesc>
-                <p> This assignment is completed as part of the course "Digital Cultural Heritage
-                    Spring 2023" at the  University of Borås. The assignment is to encode a text with
-                    appropriate TEI elements for the understanding of the different TEI elements. The
-                    project also hopes to establish a means by which future workers might digitize the
-                    Textilmuseet archive of ephemera.Pages 40 and 41 of the catalog have been digitized for this project.<!-- add a few lines about the catalog -->
+                <p> This project represents pages digitized from the A.B Wiskadals Fabric
+                   catalog of Fall/Winter of 1951-1952. The physical copy of the catalog is currently owned
+                   by the Textile Museum of Borås. The catalog includes various categories of items like womenswear,
+                    menswear, kidswear, fabrics, toys, home decor and crockery for purchase. For this project the pages
+                    40 and 41 have been digitized and encoded.
                 </p>
             </projectDesc>
             <editorialDecl>

@@ -34,7 +34,7 @@
                     <a href="index.html">Home</a> |
                     <a href="toplayer.html">Top Layer</a> |
                     <a href="design.html">Design At A Glance</a> |
-                    <a href="download.html">Downloads</a>
+                    <a href="files.html">Files</a>
                 </nav>
                 <main>
                     <!-- bootstrap "container" class makes the columns look pretty -->

@@ -11,9 +11,43 @@
                 <author>A.B Wiskadals Fabrik</author>
                 <editor>Åhlén &amp; Åkerlund</editor>
                 <principal>Sanam Ali</principal>
+                <principal>Rachel Bayston</principal>
                 <respStmt>
-                    <resp>Encode the source text with TEI elements</resp>
-                    <name>Sanam Ali</name>
+                    
+                    <persName>Sanam Ali</persName>
+                    <persName>Rachel Bayston</persName>
+                    <resp>TEI encoding</resp>
+                </respStmt>
+                <respStmt>
+                    <persName xml:id="customization">Sanam Ali</persName>
+                    <resp>Custom TEI elements</resp>
+                    
+                    
+                </respStmt>
+                <respStmt>
+                    <persName>Sanam Ali</persName>
+                    <resp>OCR</resp>
+                    
+                    
+                </respStmt>
+                <respStmt>
+                    <persName>Sanam Ali</persName>
+                    <persName>Rachel Bayston</persName>
+                    <resp>Transcription corrections   </resp>
+                    
+                    
+                </respStmt>
+                <respStmt>
+                    
+                    <persName>Sanam Ali</persName>
+                    <persName>Rachel Bayston</persName>
+                    <resp>XST stylesheet and transformation</resp>
+                </respStmt>
+                <respStmt>
+                    <persName>Rachel Bayston</persName>
+                    <resp>TEI header
+                        
+                    </resp>
                 </respStmt>
             </titleStmt>
             <editionStmt>
@@ -21,7 +55,7 @@
             </editionStmt>
             <extent>
                 <measure unit="pages" quantity="332">332 pages of the source
-                catalog</measure></extent>
+                    catalog</measure></extent>
             <publicationStmt>
                 <publisher>TEI @Borås</publisher>
                 <pubPlace>
@@ -36,20 +70,16 @@
                 <distributor> IT services, Borås Högskolan </distributor>
                 <authority>Sanam Ali</authority>
                 <date when="2023-05-05"/>
-
+                
                 <availability>
                     <licence> Licenced with a <ref
-                            target="https://creativecommons.org/licenses/by-nc/4.0/"> Creative
-                            Commons Attribution </ref>licence. <p> The physical catalog owned by the
-                            Textile Museum Borås. Transciption is distributed under license CC BY-NC
+                        target="https://creativecommons.org/licenses/by-nc/4.0/"> Creative
+                        Commons Attribution </ref>licence. <p xml:id="repo">Physical catalog owned by 
+                            Borås Textilmuseet. Transciption distributed under license CC BY-NC
                             4.0</p>
                     </licence>
                 </availability>
             </publicationStmt>
-            <notesStmt>
-                <note>Completed for a TEI assignment for the course of Digital Curtural Heritage
-                    Spring 2023</note>
-            </notesStmt>
             <sourceDesc>
                 <bibl>
                     <title>Höstern och Vintern 1951-52</title>
@@ -71,6 +101,7 @@
                             supplied to the authors of this document courtesy of Borås Textile
                             Musuem. The catalog various categories of items like womenswear,
                             menswear, kidswear, fabrics, toys, home decor and crockery for purchase.
+                            
                         </summary>
                     </msContents>
                 </msDesc>
@@ -79,14 +110,16 @@
         <encodingDesc>
             <projectDesc>
                 <p> This assignment is completed as part of the course "Digital Cultural Heritage
-                    Spring 2023" in Univeristy of Borås. The assignment is to encode a text with
-                    appropriate TEI elements for the understanding of the different TEI elements.
+                    Spring 2023" at the  University of Borås. The assignment is to encode a text with
+                    appropriate TEI elements for the understanding of the different TEI elements. The
+                    project also hopes to establish a means by which future workers might digitize the
+                    Textilmuseet archive of ephemera.Pages 40 and 41 of the catalog have been digitized for this project.<!-- add a few lines about the catalog -->
                 </p>
             </projectDesc>
             <editorialDecl>
                 <correction>
                     <p>Spellings errors, lexical or printing errros have not been corrected to
-                        maintain authencinity of the original printed catalog</p>
+                        maintain authenticity of the original printed catalog</p>
                 </correction>
                 <hyphenation>
                     <p>Hyphens have been transcribed as they appeared in the original print</p>

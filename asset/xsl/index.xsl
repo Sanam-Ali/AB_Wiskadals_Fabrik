@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="xs tei html" version="2.0"
-    xmlns:fcat="http://www.fashion/ns/tei_all">
+    xmlns:html="http://www.w3.org/1999/xhtml" exclude-result-prefixes="xs tei html" version="2.0">
     <xsl:output method="html"/>
+    
+    <!-- transform the root element (TEI) into an HTML template -->
     <xsl:template match="tei:TEI">
-        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
-        <xsl:text>&#xa;</xsl:text>
+        <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text><xsl:text>&#xa;</xsl:text>
         <html lang="en" xml:lang="en">
             <head>
                 <title>
                     <!-- add the title from the metadata. This is what will be shown
-                    on your browsers tab--> A.B Wiskadals Fabrik Catalog: Home </title>
+                    on your browsers tab-->
+                    A.B Wiskadals Fabrik Catalog: Home
+                </title>
                 <!-- load bootstrap css (requires internet!) so you can use their pre-defined css classes to style your html -->
+                <!--Stylesheet local, fix and delete before sending-->
                 <link rel="stylesheet"
                     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
                     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
                     crossorigin="anonymous"/>
-                <!-- load the stylesheets in the assets/css folder, where you can modify the styling of your website-->
+                <!-- load the stylesheets in the assets/css folder, where you can modify the styling of your website -->
                 <link rel="stylesheet" href="asset/css/main.css"/>
                 <link rel="stylesheet" href="asset/css/desktop.css"/>
+                
             </head>
-            
             <body>
                 <header>
                     <h1>
@@ -59,15 +62,20 @@
                                                 select="//tei:facsimile/tei:surface[@xml:id = 'pg40_41']//tei:figDesc"
                                             />
                                         </xsl:attribute>
-                                    </img>
+                                    </img>    
                                 </article>
                             </div>
+                            <!-- second column: apply matching templates for anything nested underneath the tei:text element -->
                             <div class="col-sm">
-                                <article id="transcription">
-                                    <p>
-                                        <strong>Description:</strong>
-                                        <xsl:apply-templates select="//tei:TEI//tei:surface[@xml:id = 'pg40_41']//tei:figDesc"/>
-                                    </p>
+                                <article id="description">
+                                    <article id="transcription">
+                                        <!--This Description is now supplied by the summary at line 102 of the TEI header under msDesc-->
+                                        <p>
+                                            <strong>Description:</strong>
+                                            <xsl:apply-templates select="//tei:TEI//tei:msDesc//tei:summary"/>
+                                            <!--original code tei:surface[@xml:id = 'pg40_41']//tei:figDesc"/>-->
+                                        </p>
+                                    </article>
                                 </article>
                             </div>
                         </div>
@@ -77,17 +85,29 @@
                                     <p>
                                         <strong>Author:</strong>
                                         <br/>
-                                        <xsl:apply-templates select="//tei:TEI//tei:titleStmt//tei:author"/>
+                                        <xsl:apply-templates select="//tei:TEI//tei:fileDesc//tei:titleStmt//tei:author"/>
+                                        
                                     </p>
                                     <p>
-                                        <strong>Transcription by:</strong><br/>
-                                        <xsl:apply-templates select="//tei:TEI//tei:principal"/>
+                                        <strong>Transcription and encoding by:</strong><br/>
+                                        <xsl:apply-templates select="//tei:TEI//tei:fileDesc//tei:titleStmt//tei:principal[1]"/>
+                                        <xsl:text> and </xsl:text>
+                                        <xsl:apply-templates select="//tei:TEI//tei:fileDesc//tei:titleStmt//tei:principal[2]"/>
                                     </p>
+                                    <p>
+                                        <strong>TEI customization and OCR by:</strong><br/>
+                                        <xsl:value-of select="id('customization')"/>
+                                    </p>
+                                    <p>
+                                        <strong>Holding repository:</strong><br/>
+                                        <xsl:value-of select="id('repo')"/>
+                                    </p>   
                                 </article>
                             </div>
                         </div>
                     </div>
                 </main>
+                
                 <footer>
                     <div class="row" id="footer">
                         <div class="col-sm copyright">
@@ -104,5 +124,8 @@
                 </footer>
             </body>
         </html>
+    </xsl:template>
+    <xsl:template match="tei:lb">
+        <br/>
     </xsl:template>
 </xsl:stylesheet>

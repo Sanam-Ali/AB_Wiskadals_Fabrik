@@ -32,19 +32,28 @@
                 </header>
                 <nav id="sitenav">
                     <a href="index.html">Home</a> | <a href="toplayer.html">Top Layer</a> | <a
-                        href="design.html">Design At A Glance</a> | <a href="files.html"
-                        >Files</a>
+                        href="design.html">Design At A Glance</a> | <a href="files.html">Files</a>
                 </nav>
                 <main>
                     <!-- bootstrap "container" class makes the columns look pretty -->
                     <div class="container">
-                        <!-- define a row layout with bootstrap's css classes (two columns with content, and an empty column in between) -->
+                        <p>In order to assist the users with readibility <strong>"Design at a Glance"</strong> page
+                            has been created. Here you can view the various article of clothings from the catalog are
+                            their characteristics in a more compact form. The tabular representation
+                            allows the users to view an item and its properties without have to
+                            read the entire text. </p>
+                        <p> Click on an <strong>ID</strong> below to display its various features in a tabular
+                            form.</p>
+                        <!-- define a row layout with bootstrap's css classes  -->
                         <div class="row">
-                            <div class="col-">
+                            <div class="col-4">
                                 <h3>Images</h3>
                             </div>
-                            <div class="col-md">
-                                <h3>Transcription</h3>
+                            <div class="col-2">
+                                <h3>ID's</h3>
+                            </div>
+                            <div class="col-6">
+                                <h3>Tabular Representation</h3>
                             </div>
                         </div>
                         <!-- set up an image-text pair for each page in your document, and start a new 'row' for each pair -->
@@ -92,124 +101,158 @@
                                 <!-- fill the second column with our transcription -->
 
                                 <div class="col-md">
-                                    <div class="container">
-                                    <xsl:for-each select="tei:div[@type = 'column']/tei:div[@type = 'list']/tei:list/tei:item">
-                                        <div class="table">
-                                            <div class="row">
-                                                <div class="col-">
+                                    <div class="col-2">
+                                        <xsl:for-each
+                                            select="tei:div[@type = 'column']/tei:div[@type = 'list']/tei:list/tei:item">
+                                            <p>
+                                                <a>
+                                                  <xsl:attribute name="href">
+                                                  <xsl:value-of select="concat('#', @xml:id)"/>
+                                                  </xsl:attribute>
+                                                  <xsl:attribute name="data-toggle"
+                                                  >collapse</xsl:attribute>
+                                                  <xsl:attribute name="aria-expanded"
+                                                  >false</xsl:attribute>
+                                                  <xsl:apply-templates select="@xml:id"/>
+                                                </a>
+                                            </p>
+                                        </xsl:for-each>
+                                    </div>
+                                    <div class="col-6">
+                                        <xsl:for-each
+                                            select="tei:div[@type = 'column']/tei:div[@type = 'list']/tei:list/tei:item">
+                                            <div class="collapse">
+                                                <xsl:attribute name="id">
+                                                  <xsl:value-of select="@xml:id"/>
+                                                </xsl:attribute>
+                                                <div class="row">
+                                                  <div class="col-4">
                                                   <!--column for title of a feature -->
 
                                                   <strong>idno</strong>
 
-                                                </div>
+                                                  </div>
 
-                                                <div class="col-md">
+                                                  <div class="col-md">
                                                   <!--column including value of the feature -->
                                                   <xsl:apply-templates select="tei:p/tei:idno"/>
 
+                                                  </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="row">
-                                                <div class="col-">                                                  
+                                                <div class="row">
+                                                  <div class="col-4">
                                                   <strong>Sleeve</strong>
-                                                </div>
-                                                <div class="col-md">
-                                                    <!-- Not all the items have all the features so in case an item is missing a feature it should diplay 
+                                                  </div>
+                                                  <div class="col-md">
+                                                  <!-- Not all the items have all the features so in case an item is missing a feature it should diplay 
                                                     "Ej angivet/Not speicified" instead.
                                                     For this reason xsl:choose is used with xsl:when being true displays the feature otherwise displays "Ej angivet"
                                                    -->
-                                                    <xsl:choose>
-                                                        <xsl:when test="tei:p/tei:desc/fcat:design[@type='sleeve']"><xsl:apply-templates
-                                                            select="tei:p/tei:desc/fcat:design[@type='sleeve']"/>
-                                                        </xsl:when>
-                                                        <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
-                                                    </xsl:choose>
-                                                    
+                                                  <xsl:choose>
+                                                  <xsl:when
+                                                  test="tei:p/tei:desc/fcat:design[@type = 'sleeve']">
+                                                  <xsl:apply-templates
+                                                  select="tei:p/tei:desc/fcat:design[@type = 'sleeve']"
+                                                  />
+                                                  </xsl:when>
+                                                  <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
+                                                  </xsl:choose>
+
+                                                  </div>
                                                 </div>
-                                            </div>
-                                            <!--end of row -->
-                                            <div class="row">
-                                                <div class="col-">                                                                                                  
+                                                <!--end of row -->
+                                                <div class="row">
+                                                  <div class="col-4">
                                                   <strong>Fabric</strong>
+                                                  </div>
+                                                  <div class="col-md">
+                                                  <xsl:choose>
+                                                  <xsl:when test="tei:p/tei:desc/fcat:fabric">
+                                                  <xsl:apply-templates
+                                                  select="tei:p/tei:desc/fcat:fabric"/>
+                                                  </xsl:when>
+                                                  <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
+                                                  </xsl:choose>
+
+                                                  </div>
                                                 </div>
-                                                <div class="col-md">                                                  
-                                                    <xsl:choose>
-                                                        <xsl:when test="tei:p/tei:desc/fcat:fabric"><xsl:apply-templates
-                                                            select="tei:p/tei:desc/fcat:fabric"/>
-                                                        </xsl:when>
-                                                        <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
-                                                    </xsl:choose>
-                                                    
+                                                <div class="row">
+                                                  <div class="col-4">
+                                                  <strong>Neckline</strong>
+                                                  </div>
+                                                  <div class="col-md">
+                                                  <xsl:choose>
+                                                  <xsl:when
+                                                  test="tei:p/tei:desc/fcat:design[@type = 'neckline']">
+                                                  <xsl:apply-templates
+                                                  select="tei:p/tei:desc/fcat:design[@type = 'neckline']"
+                                                  />
+                                                  </xsl:when>
+                                                  <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
+                                                  </xsl:choose>
+
+                                                  </div>
+                                                </div>
+                                                <div class="row">
+                                                  <div class="col-4">
+                                                  <strong>Embroidery</strong>
+                                                  </div>
+                                                  <div class="col-md">
+                                                  <xsl:choose>
+                                                  <xsl:when
+                                                  test="tei:p/tei:desc/fcat:design[@type = 'embroidery']">
+                                                  <xsl:apply-templates
+                                                  select="tei:p/tei:desc/fcat:design[@type = 'embroidery']"
+                                                  />
+                                                  </xsl:when>
+                                                  <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
+                                                  </xsl:choose>
+
+                                                  </div>
+                                                </div>
+                                                <div class="row">
+                                                  <div class="col-4">
+                                                  <strong>Color</strong>
+                                                  </div>
+                                                  <div class="col-md">
+                                                  <xsl:choose>
+                                                  <xsl:when test="tei:p/tei:desc/fcat:color">
+                                                  <xsl:apply-templates
+                                                  select="tei:p/tei:desc/fcat:color"/>
+                                                  </xsl:when>
+                                                  <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
+                                                  </xsl:choose>
+
+                                                  </div>
+                                                </div>
+                                                <div class="row">
+                                                  <div class="col-4">
+                                                  <strong>Size</strong>
+                                                  </div>
+                                                  <div class="col-md">
+                                                  <xsl:choose>
+                                                  <xsl:when test="tei:p/tei:desc/fcat:size">
+                                                  <xsl:apply-templates
+                                                  select="tei:p/tei:desc/fcat:size"/>
+                                                  </xsl:when>
+                                                  <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
+                                                  </xsl:choose>
+
+                                                  </div>
+                                                </div>
+                                                <div class="row">
+                                                  <div class="col-4">
+                                                  <strong>Price</strong>
+                                                  </div>
+                                                  <div class="col-md">
+                                                  <xsl:apply-templates
+                                                  select="tei:p/tei:desc[@type = 'price']/tei:num"/>
+                                                  </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-">                                                                                                  
-                                                    <strong>Neckline</strong>
-                                                </div>
-                                                <div class="col-md">  
-                                                    <xsl:choose>
-                                                        <xsl:when test="tei:p/tei:desc/fcat:design[@type='neckline']"><xsl:apply-templates
-                                                            select="tei:p/tei:desc/fcat:design[@type='neckline']"/>
-                                                        </xsl:when>
-                                                        <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
-                                                    </xsl:choose>
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-">                                                                                                  
-                                                    <strong>Embroidery</strong>
-                                                </div>
-                                                <div class="col-md">  
-                                                    <xsl:choose>
-                                                        <xsl:when test="tei:p/tei:desc/fcat:design[@type='embroidery']"><xsl:apply-templates
-                                                            select="tei:p/tei:desc/fcat:design[@type='embroidery']"/>
-                                                        </xsl:when>
-                                                        <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
-                                                    </xsl:choose>
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-">                                                                                                  
-                                                    <strong>Color</strong>
-                                                </div>
-                                                <div class="col-md">                                                  
-                                                    <xsl:choose>
-                                                        <xsl:when test="tei:p/tei:desc/fcat:color"><xsl:apply-templates
-                                                            select="tei:p/tei:desc/fcat:color"/>
-                                                        </xsl:when>
-                                                        <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
-                                                    </xsl:choose>
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-">                                                                                                  
-                                                    <strong>Size</strong>
-                                                </div>
-                                                <div class="col-md">                                                  
-                                                    <xsl:choose>
-                                                        <xsl:when test="tei:p/tei:desc/fcat:size"><xsl:apply-templates
-                                                            select="tei:p/tei:desc/fcat:size"/>
-                                                        </xsl:when>
-                                                        <xsl:otherwise>EJ ANGIVET</xsl:otherwise>
-                                                    </xsl:choose>
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-">                                                                                                  
-                                                    <strong>Price</strong>
-                                                </div>
-                                                <div class="col-md">                                                  
-                                                    <xsl:apply-templates
-                                                        select="tei:p/tei:desc[@type='price']/tei:num"/>
-                                                </div>
-                                            </div>
-                                        </div>            <!--end of table div-->
-                                    </xsl:for-each>
+                                            <!--end of table div-->
+                                        </xsl:for-each>
                                     </div>
                                 </div>
                                 <!-- end of the 1st outer column -->

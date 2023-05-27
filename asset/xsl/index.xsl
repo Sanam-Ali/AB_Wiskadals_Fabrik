@@ -47,20 +47,20 @@
                             <!-- first column: load the image based on the IIIF link in the graphic above -->
                             <div class="col-sm">
                                 <article id="thumbnail">
-                                    <img>
+                                    <img class="cover_image">
                                         <xsl:attribute name="src">
                                             <xsl:value-of
-                                                select="//tei:facsimile/tei:surface//tei:graphic[@xml:id = 'pg40_41_full']/@url"
+                                                select="//tei:facsimile/tei:surface//tei:graphic[@xml:id = 'cover_full']/@url"
                                             />
                                         </xsl:attribute>
                                         <xsl:attribute name="title">
                                             <xsl:value-of
-                                                select="//tei:facsimile/tei:surface[@xml:id = 'pg40_41']//tei:label"
+                                                select="//tei:facsimile/tei:surface[@xml:id = 'cover']//tei:label"
                                             />
                                         </xsl:attribute>
                                         <xsl:attribute name="alt">
                                             <xsl:value-of
-                                                select="//tei:facsimile/tei:surface[@xml:id = 'pg40_41']//tei:figDesc"
+                                                select="//tei:facsimile/tei:surface[@xml:id = 'cover']//tei:figDesc"
                                             />
                                         </xsl:attribute>
                                     </img>    
@@ -74,8 +74,25 @@
                                         <p>
                                             <strong>Description:</strong>
                                             <xsl:apply-templates select="//tei:TEI//tei:encodingDesc//tei:projectDesc"/>
-                                            <!--original code tei:surface[@xml:id = 'pg40_41']//tei:figDesc"/>-->
                                         </p>
+                                        <img>
+                                            <xsl:attribute name="src">
+                                                <xsl:value-of
+                                                    select="//tei:facsimile/tei:surface//tei:graphic[@xml:id = 'pg40_41_full']/@url"
+                                                />
+                                            </xsl:attribute>
+                                            <xsl:attribute name="title">
+                                                <xsl:value-of
+                                                    select="//tei:facsimile/tei:surface[@xml:id = 'pg40_41']//tei:label"
+                                                />
+                                            </xsl:attribute>
+                                            <xsl:attribute name="alt">
+                                                <xsl:value-of
+                                                    select="//tei:facsimile/tei:surface[@xml:id = 'pg40_41']//tei:figDesc"
+                                                />
+                                            </xsl:attribute>
+                                        </img>    
+                                        
                                     </article>
                                 </article>
                             </div>
@@ -97,7 +114,7 @@
                                     </p>
                                     <p>
                                         <strong>TEI customization and OCR by:</strong><br/>
-                                        <xsl:value-of select="id('customization')"/>
+                                        <xsl:value-of select="//tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:respStmt/tei:persName[@xml:id='SA']"/>
                                     </p>
                                     <p>
                                         <strong>Holding repository:</strong><br/>

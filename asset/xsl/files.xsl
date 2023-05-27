@@ -25,7 +25,7 @@
 
             <body>
                 <header>
-                    <h1> Project files </h1>
+                    <h1> <xsl:apply-templates select="//tei:titleStmt/tei:title"/></h1>
                 </header>
                 <nav id="sitenav">
                     <a href="index.html">Home</a> | <a href="toplayer.html">Top Layer</a> | <a
@@ -44,8 +44,7 @@
                                     your browser's 'save as' or 'print' functions.</p>
                                 <article id="PDF">
                                     <a>
-                                        <xsl:attribute name="href">asset/pdf/Wiskadals
-                                            AB.pdf</xsl:attribute>
+                                        <xsl:attribute name="href">asset/pdf/Wiskadals_AB.pdf</xsl:attribute>
                                         <xsl:attribute name="target">_blank</xsl:attribute>PDF
                                         file</a>
 

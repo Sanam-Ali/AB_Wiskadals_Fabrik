@@ -17,8 +17,8 @@ body {
 #subtitle {display: none;}
 
 #details{
-    margin: 1vw;
-    padding: 1.5vw;
+  /*  margin: 1vw;
+    padding: 1.5vw; */
     border: 1px solid black;
     text-align: center;
 }
@@ -250,7 +250,7 @@ img {
 }
 
 .cover_image{
-    margin: 5px;
+   /* margin: 5px; */
     border: 1px solid black;
     width: 400px;
     height:500px;

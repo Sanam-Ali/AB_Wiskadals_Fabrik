@@ -45,7 +45,7 @@
                         <!-- define a row layout with bootstrap's css classes (two columns) -->
                         <div class="row">
                             <!-- first column: load the image based on the IIIF link in the graphic above -->
-                            <div class="col-sm">
+                            <div class="col-6">
                                 <article id="thumbnail">
                                     <img class="cover_image">
                                         <xsl:attribute name="src">
@@ -67,7 +67,7 @@
                                 </article>
                             </div>
                             <!-- second column: apply matching templates for anything nested underneath the tei:text element -->
-                            <div class="col-sm">
+                            <div class="col-6">
                                 <article id="description">
                                     <article id="transcription">
                                         <!--This Description is now supplied by the summary at line 102 of the TEI header under msDesc-->
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm">
+                            <div class="col-6">
                                 <article id="details">
                                     <p>
                                         <strong>Author:</strong>

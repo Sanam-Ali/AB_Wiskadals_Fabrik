@@ -25,92 +25,61 @@
 
             <body>
                 <header>
-                    <h1>
-                        <xsl:apply-templates select="//tei:titleStmt/tei:title"/>
-                    </h1>
+                    <h1> About </h1>
                 </header>
                 <nav id="sitenav">
                     <a href="index.html">Home</a> | <a href="toplayer.html">Top Layer</a> | <a
-                        href="design.html">Design At A Glance</a> | <a href="files.html">Files</a>
+                        href="design.html">Design At A Glance</a> | <a href="files.html">Files</a> |
+                        <a href="about.html">About</a>
                 </nav>
                 <main>
                     <!-- bootstrap "container" class makes the columns look pretty -->
-                    <div class="container">
+                    <div class="container" style="max-width:750px;">
+                        <h2 class="text-center">About the site</h2>
+                        <p>This website gives you access to scans and text from the
+                                <xsl:apply-templates
+                                select="//tei:TEI//tei:fileDesc//tei:titleStmt//tei:author"/>
+                            clothing catalog. Top Layer reproduces the text in full, accompanied by
+                            the scanned images of the catalog pages. Design at a Glance allows you
+                            to view details of garment design and style in tabular form. Files
+                            allows you to view and download the project files, including the TEI
+                            document as a .txt file, a PDF of the project, and the images of the
+                            source document as JPGs. With the exception of this page, the site was
+                            built by transforming the TEI file using XSLT stylesheet. </p>
+                        <h2 class="text-center">About the project</h2>
+                        <p>This is a short project to digitize a single double-page spread from the
+                            AB Wiskadals 1951-52 catalog. It exists to demonstrate basic ability in
+                            core competencies of digitization, but also to work towards a framework
+                            that could be used to digitize large archives of ephemera in Borås
+                            Textilmuseet and potentially elsewhere.</p>
 
-                        <p>This project has been completed on 5th-June-2023 as a evaluation criteria
-                            for the course Digitising Cultural Heritage Material 32LDK1 B15V3 VT2023
-                            at <xsl:apply-templates
-                                select="//tei:TEI/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:pubPlace/tei:address/tei:orgName"
-                            />. At the time of project completion both developers were students of the University.</p>
-                        <!--Defines a row which is centre-justified to make it look nicer-->
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <p>Sanam Ali</p>
-                                <p></p>
-                                <article id="PDF">
-                                    <a>
-                                        <xsl:attribute name="href"
-                                            >asset/pdf/Wiskadals_AB.pdf</xsl:attribute>
-                                        <xsl:attribute name="target">_blank</xsl:attribute>PDF
-                                        file</a>
+                        <h2 class="text-center">About us</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="text-center" style="font-size: 1.25vw;"><xsl:apply-templates
+                                    select="//tei:TEI//tei:fileDesc//tei:titleStmt//tei:respStmt//tei:persName[@xml:id='SA']"/></h3>
 
-                                </article>
+
+                                <p>Sanam holds a Master’s degree in computer science and taught the
+                                    subject at undergraduate level for several years before
+                                    embarking on the MsC in Library and Information Science at Borås
+                                    Högskolan. She can be contacted at: <strong>sanamali.1989@gmail.com</strong></p>
                             </div>
-                            <div class="col-2">
-                                <h2>XML file</h2>
-                                <p>Click on the link to open the project's TEI compliant XML file,
-                                    then copy or download it.</p>
-                                <article id="TEI">
-                                    <a>
-                                        <xsl:attribute name="href">tei/tei.txt</xsl:attribute>
-                                        <xsl:attribute name="target">_blank</xsl:attribute>XML
-                                        file</a>
-                                </article>
-                            </div>
-                            <div class="col-2">
-                                <h2>Full image</h2>
-                                <p>Click on the link, then save it using your browser's 'save as' or
-                                    'print' functions.</p>
-                                <article id="Image_40_41">
-
-                                    <a>
-                                        <xsl:attribute name="href"
-                                            >asset/img/pg_40_41.jpg</xsl:attribute>
-                                        <xsl:attribute name="target">_blank</xsl:attribute>JPG Image
-                                        of pages 40 and 41</a>
-
-                                </article>
-                            </div>
-
-                            <div class="col-2">
-                                <h2>Page 40 image</h2>
-                                <p>Click on the link, then save it using your browser's 'save as' or
-                                    'print' functions.</p>
-                                <article id="Image_40">
-
-                                    <a>
-                                        <xsl:attribute name="href"
-                                            >asset/img/pg_40.jpg</xsl:attribute>
-                                        <xsl:attribute name="target">_blank</xsl:attribute>JPG image
-                                        page 40 </a>
-                                </article>
-                            </div>
-                            <div class="col-2">
-                                <h2>Page 41 image</h2>
-                                <p>Click on the link, then save it using your browser's 'save as' or
-                                    'print' functions.</p>
-                                <article id="Image_41">
-                                    <a>
-                                        <xsl:attribute name="href"
-                                            >asset/img/pg_41.jpg</xsl:attribute>
-                                        <xsl:attribute name="target">_blank</xsl:attribute>JPG image
-                                        page 41 </a>
-                                </article>
+                            <div class="col-md-6">
+                                <h3 class="text-center" style="font-size: 1.25vw;"><xsl:apply-templates
+                                    select="//tei:TEI//tei:fileDesc//tei:titleStmt//tei:respStmt//tei:persName[@xml:id='RB']"/></h3>
+                                <p>Rachel works in digital marketing, proofreading and editing. She
+                                    can be contacted at: <strong>r.bayston@gmail.com</strong> </p>
                             </div>
                         </div>
-
-
+                        <h2 class="text-center">Acknowledgements</h2>
+                        <p>The team gratefully acknowledges the assistance of our teachers and
+                            fellow students at Borås Högskolan, and gives special thanks to <strong>Johannes
+                                Daun</strong> (Industrial Heritage Co-ordinator) of Borås Textilmuseet.</p>
                     </div>
+
+                    <!--Defines a row which is centre-justified to make it look nicer-->
+
                 </main>
                 <footer>
                     <div class="row" id="footer">

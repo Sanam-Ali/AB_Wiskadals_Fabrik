@@ -36,8 +36,9 @@
                     <a href="index.html">Home</a> |
                     <a href="toplayer.html">Top Layer</a> |
                     <a href="design.html">Design At A Glance</a> |
-                    <a href="files.html">Files</a>
-                    <!--Now reads 'Files,' not 'Downloads.'-->
+                    <a href="files.html">Files</a> |
+                    <a href="about.html">About</a>
+                    
                 </nav>
                 <main id="manuscript">
                     <!-- bootstrap "container" class makes the columns look pretty -->

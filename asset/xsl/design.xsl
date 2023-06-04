@@ -32,7 +32,8 @@
                 </header>
                 <nav id="sitenav">
                     <a href="index.html">Home</a> | <a href="toplayer.html">Top Layer</a> | <a
-                        href="design.html">Design At A Glance</a> | <a href="files.html">Files</a>
+                        href="design.html">Design At A Glance</a> | <a href="files.html">Files</a> |
+                    <a href="about.html">About</a>
                 </nav>
                 <main>
                     <!-- bootstrap "container" class makes the columns look pretty -->
@@ -50,7 +51,7 @@
                                 <h3>Images</h3>
                             </div>
                             <div class="col-2">
-                                <h3>ID's</h3>
+                                <h3>IDs</h3>
                             </div>
                             <div class="col-6">
                                 <h3>Tabular Representation</h3>
@@ -63,7 +64,7 @@
                             <xsl:variable name="facs" select="@facs"/>
                             <div class="row">
                                 <!-- fill the first column with this page's image -->
-                                <div class="col-">
+                                <div class="col-4">
                                     <article>
                                         <!-- make an HTML <img> element, with a maximum width of 100 pixels -->
                                         <img class="img_medium">
@@ -100,8 +101,8 @@
                                 </div>
                                 <!-- fill the second column with our transcription -->
 
-                                <div class="col-md">
-                                    <div class="col-2">
+                                <div class="col-8">
+                                    <div class="col-2 text-center">
                                         <xsl:for-each
                                             select="tei:div[@type = 'column']/tei:div[@type = 'list']/tei:list/tei:item">
                                             <p>

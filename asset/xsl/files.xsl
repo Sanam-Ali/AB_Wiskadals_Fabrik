@@ -45,7 +45,7 @@
                                     your browser's 'save as' or 'print' functions.</p>
                                 <article id="PDF">
                                     <a>
-                                        <xsl:attribute name="href">asset/pdf/Wiskadals_AB.pdf</xsl:attribute>
+                                        <xsl:attribute name="href">asset/pdf/AB Wiskadals Fabrik Hösten och Vintern 1951-52.pdf</xsl:attribute>
                                         <xsl:attribute name="target">_blank</xsl:attribute>PDF
                                         file</a>
 

@@ -25,7 +25,7 @@
 
             <body>
                 <header>
-                    <h1> About </h1>
+                    <h1> <xsl:apply-templates select="//tei:titleStmt/tei:title"/></h1>
                 </header>
                 <nav id="sitenav">
                     <a href="index.html">Home</a> | <a href="toplayer.html">Top Layer</a> | <a
